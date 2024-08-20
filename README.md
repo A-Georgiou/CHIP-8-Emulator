@@ -8,9 +8,9 @@ This project and it's dependencies can be built using CMake.
 
 Example of Chip-8 Emulator playing Space Jam:
 
-<div style="text-align:center">
+<p align="center">
 <img src="./media/spacejam.gif" alt="Space-Jam Gif"/>
-</div>
+</p>
 
 ## Features
 
