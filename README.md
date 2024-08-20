@@ -8,7 +8,9 @@ This project and it's dependencies can be built using CMake.
 
 Example of Chip-8 Emulator playing Space Jam:
 
-![Space Jam Gif Example](./media/spacejam.gif)
+<div style="text-align:center">
+<img src="./media/spacejam.gif" alt="Space-Jam Gif"/>
+</div>
 
 ## Features
 
@@ -50,4 +52,6 @@ Options:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-![Tetris Rom](./media/tetris.gif)
+<div style="text-align:center">
+<img src="./media/tetris.gif" alt="Tetris Gif"/>
+</div>
