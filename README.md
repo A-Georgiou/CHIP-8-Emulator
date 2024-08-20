@@ -52,6 +52,6 @@ Options:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<div style="text-align:center">
+<p align="center">
 <img src="./media/tetris.gif" alt="Tetris Gif"/>
-</div>
+</p>
