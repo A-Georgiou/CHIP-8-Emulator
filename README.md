@@ -6,6 +6,10 @@ and a wonderful blog written by Tobias Langhoff (https://tobiasvl.github.io/blog
 
 This project and it's dependencies can be built using CMake.
 
+Example of Chip-8 Emulator playing Space Jam:
+
+![Space Jam Gif Example](./media/spacejam.gif)
+
 ## Features
 
 - Emulates CHIP-8 instructions
@@ -18,24 +22,32 @@ This project and it's dependencies can be built using CMake.
 
 ## Building
 
-To build the project, follow these steps:
+To build the project, simply follow these steps:
 
-```sh
-cmake .
-make
-```
+1. Run CMake to build your Makefile: `cmake  .`
+2. Enter `make` in your terminal to build the project to `chip-8`
+
 
 ## Usage
 
 To run the project, please download a valid CHIP-8 ROM (.ch8 file) from https://github.com/kripod/chip8-roms.
 
 ```sh
-Usage: ./chip-8 [options] <ROM file>
+
+Usage:  ./chip-8 [options] <ROM file>
+
 Options:
-  --width <width>     Set screen width (default: 640)
-  --height <height>   Set screen height (default: 320)
-  --fps <fps>         Set frames per second (default: 60)
+
+--width <width> Set  screen  width (default: 640)
+
+--height <height> Set  screen  height (default: 320)
+
+--fps <fps> Set  frames  per  second (default: 60)
+
 ```
 
 ## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+![Tetris Rom](./media/tetris.gif)
