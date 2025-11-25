@@ -1,8 +1,11 @@
+#ifndef FONT_HPP
+#define FONT_HPP
+
 #include <cstdint>
 
-const uint8_t FONTSET_SIZE = 80;
+constexpr uint8_t FONTSET_SIZE = 80;
 
-uint8_t fontset[FONTSET_SIZE] =
+constexpr uint8_t fontset[FONTSET_SIZE] =
 {  
     0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
     0x20, 0x60, 0x20, 0x20, 0x70, // 1
@@ -21,3 +24,5 @@ uint8_t fontset[FONTSET_SIZE] =
     0xF0, 0x80, 0xF0, 0x80, 0xF0, // E
     0xF0, 0x80, 0xF0, 0x80, 0x80  // F
 };
+
+#endif // FONT_HPP
