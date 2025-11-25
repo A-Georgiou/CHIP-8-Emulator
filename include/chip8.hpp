@@ -1,13 +1,11 @@
 #ifndef CHIP8_H
 #define CHIP8_H
 
-#include <iostream>
 #include <chrono>
+#include <cstdint>
+#include <functional>
 #include <random>
 #include <unordered_map>
-#include <array>
-#include <functional>
-#include <set>
 
 namespace Chip8Emulator{
 
@@ -85,8 +83,6 @@ private:
 
     void InitializeOpcodeTable();
     void ExecuteOpcode(const std::unordered_map<uint8_t, OpcodeFunc>& byteMap, uint8_t opcode);
-    void DecodeOpcode();
-    void setOpcodeFunction(uint8_t opcode, void (Chip8::*func)());
 
 public:
     Chip8();

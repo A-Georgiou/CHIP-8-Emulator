@@ -1,3 +1,6 @@
+#ifndef SCREEN_HPP
+#define SCREEN_HPP
+
 #include "raylib.h"
 #include <iostream>
 #include <memory>
@@ -23,8 +26,8 @@ private:
             .data = buffer.get(),
             .width = textureWidth,
             .height = textureHeight,
-            .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8,
-            .mipmaps = 1
+            .mipmaps = 1,
+            .format = PIXELFORMAT_UNCOMPRESSED_R8G8B8A8
         };
 
         smallTexture = LoadTextureFromImage(img);
@@ -130,3 +133,5 @@ public:
         return false;
     }
 };
+
+#endif // SCREEN_HPP

@@ -19,8 +19,8 @@ Example of Chip-8 Emulator playing Space Jam:
 
 ## Requirements
 
-- CMake 3.10 or higher
-- A C++17 compatible compiler
+- CMake 3.14 or higher
+- A C++20 compatible compiler
 
 ## Building
 

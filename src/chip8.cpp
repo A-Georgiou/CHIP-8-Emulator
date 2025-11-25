@@ -1,7 +1,9 @@
 #include "chip8.hpp"
 #include "font.hpp"
+#include <cstring>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 namespace Chip8Emulator{
 
@@ -10,20 +12,19 @@ void Chip8::LoadROM(const char* filename) {
 
     if (file.is_open()) {
         std::streampos size = file.tellg();
-        char* buffer = new char[size];
+        std::vector<char> buffer(static_cast<size_t>(size));
 
         file.seekg(0, std::ios::beg);
-        file.read(buffer, size);
+        file.read(buffer.data(), size);
         file.close();
 
-        for (long i = 0; i < size; i++) {
-            m_Data[START_ADDR + i] = buffer[i];
+        for (size_t i = 0; i < buffer.size(); i++) {
+            m_Data[START_ADDR + i] = static_cast<uint8_t>(buffer[i]);
         }
 
         std::cout << "Loaded ROM size: " << size << " bytes" << std::endl;
-        delete[] buffer;
     } else {
-        throw  std::runtime_error("Failed to open ROM file.");
+        throw std::runtime_error("Failed to open ROM file.");
     }
 }
 
@@ -195,13 +196,11 @@ void Chip8::OP_Fx07(){
 }
 
 void Chip8::OP_Fx0A() {
-    std::cout << "Waiting for key press..." << std::endl;
     bool keyPress = false;
 
     for (int i = 0; i < 16; i++) {
         if (m_Keypad[i] != 0) {
-            std::cout << "Key pressed: " << i << std::endl;
-            m_Register[(m_Opcode & 0x0F00u) >> 8u] = i;
+            m_Register[(m_Opcode & 0x0F00u) >> 8u] = static_cast<uint8_t>(i);
             keyPress = true;
             break;
         }
@@ -230,9 +229,10 @@ void Chip8::OP_Fx29(){
 }
 
 void Chip8::OP_Fx33(){
-    m_Data[m_IndexRegister] = m_Register[(m_Opcode & 0x0F00) >> 8] / 100;
-    m_Data[m_IndexRegister + 1] = (m_Register[(m_Opcode & 0x0F00) >> 8] / 10) % 10;
-    m_Data[m_IndexRegister + 2] = (m_Register[(m_Opcode & 0x0F00) >> 8] % 100) % 10;
+    uint8_t value = m_Register[(m_Opcode & 0x0F00) >> 8];
+    m_Data[m_IndexRegister] = value / 100;
+    m_Data[m_IndexRegister + 1] = (value / 10) % 10;
+    m_Data[m_IndexRegister + 2] = value % 10;
 }
 
 void Chip8::OP_Fx55(){
