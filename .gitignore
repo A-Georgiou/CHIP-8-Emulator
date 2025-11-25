@@ -32,4 +32,4 @@ main.dSYM/
 
 # Ignore OS-specific files
 .DS_Store
-Thumbs.db
+Thumbs.db_codeql_detected_source_root
